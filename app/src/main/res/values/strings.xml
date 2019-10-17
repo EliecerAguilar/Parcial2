@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Parcial2</string>
+    <string name="str_menu_perfil">Perfil</string>
 </resources>
