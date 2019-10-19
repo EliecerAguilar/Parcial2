@@ -11,7 +11,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#075E54">
 
         <ImageView
             android:id="@+id/imgB"
@@ -19,22 +20,57 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/bat" />
 
+        <ImageView
+            android:id="@+id/imgVid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/imgTel"
+            app:srcCompat="@drawable/vid_ico" />
+
+        <ImageView
+            android:id="@+id/imgTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            app:srcCompat="@drawable/tel_ico" />
+
         <TextView
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgB"
             android:text="@string/str_Name"
-            android:textSize="18sp"/>
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_status"
             android:layout_below="@id/tvName"
-            android:layout_toRightOf="@id/imgB"
             android:layout_marginLeft="10dp"
-            android:textSize="14sp"/>
+            android:layout_toRightOf="@id/imgB"
+            android:text="@string/str_status"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
     </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ListChat">
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
 
 </LinearLayout>

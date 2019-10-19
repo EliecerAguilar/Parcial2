@@ -33,6 +33,7 @@ public class ChatsIndividualActivity extends AppCompatActivity {
         tvName = (TextView)findViewById(R.id.tvName);
         tvStatus = (TextView)findViewById(R.id.tv_status);
         this.imgRedondeada(R.drawable.bat,R.id.imgB);//imagen redondeada
+
     }
 
     private void imgRedondeada(int imgGet, int imgSet){
