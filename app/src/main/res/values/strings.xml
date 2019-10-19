@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Parcial2</string>
     <string name="str_menu_perfil">Perfil</string>
+    <string name="str_status">En Linea</string>
+    <string name="str_Name">Batman</string>
 </resources>

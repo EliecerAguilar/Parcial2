@@ -13,17 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imgB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bat" />
+
         <TextView
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/str_Name"
+            android:layout_toRightOf="@id/imgB"
+            android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/str_status"
+            android:layout_below="@id/tvName"
+            android:layout_toRightOf="@id/imgB"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"/>
     </RelativeLayout>
 
 </LinearLayout>
