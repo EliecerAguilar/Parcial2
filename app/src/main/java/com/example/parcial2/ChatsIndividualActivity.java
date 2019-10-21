@@ -8,10 +8,20 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.parcial2.chat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatsIndividualActivity extends AppCompatActivity {
 
@@ -19,14 +29,17 @@ public class ChatsIndividualActivity extends AppCompatActivity {
     private ImageView imgT;
     private TextView tvName;
     private TextView tvStatus;
-
+    private ListView listViewchats;
+    private List<chat> chatsInlist = new ArrayList<>();
+    private EditText chatEnviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         this.load();
-        this.alinear();
+        this.adapterSet();
+
 
     }
 
@@ -35,6 +48,8 @@ public class ChatsIndividualActivity extends AppCompatActivity {
         tvName = (TextView)findViewById(R.id.tvName);
         tvStatus = (TextView)findViewById(R.id.tv_status);
         this.imgRedondeada(R.drawable.bat,R.id.imgB);//imagen redondeada
+        chatEnviar = (EditText)findViewById(R.id.et_chat);
+        listViewchats = (ListView) findViewById(R.id.ListChat);
     }
 
     private void imgRedondeada(int imgGet, int imgSet){
@@ -54,26 +69,36 @@ public class ChatsIndividualActivity extends AppCompatActivity {
         imageView.setImageDrawable(roundedDrawable);
 
     }
-    private void alinear(){
 
-        TextView txt = new TextView(getApplicationContext());
-        txt.setId(1);
-        txt.setText("hola");
-
-
-        //obtener id del Layout donde esta el comtrol
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.RL_title);
-        //definir variable para los cambios en los parametros del control
-        RelativeLayout.LayoutParams relativeLayoutParamas;
-        //establecer la configuracion inicial del Layout
-        relativeLayoutParamas = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-        //agregar regla de alinieacion del control
-        relativeLayoutParamas.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        //enviar las reglas al control
-        relativeLayout.addView(txt,relativeLayoutParamas);
-
+    private void enviar(View view){
+        int usr =1;
+        String str = chatEnviar.getText().toString();
+        chatsInlist.add(new chat(str,usr));
+        ListAdapter adapter = new ListAdapter(this,chatsInlist);
+        listViewchats.setAdapter(adapter);
     }
 
+    private List<chat> lista(){
+        List<chat> ch = new ArrayList<>();
+
+        ch.add(new chat("Soy batman nadie me pude ganar, a todos le spondre F",1));
+        ch.add(new chat("superman es mas buena onda",0));
+        ch.add(new chat("ya valiste",1));
+        ch.add(new chat("MEH!",0));
+
+        return ch;
+    }
+
+    private void adapterSet(){
+        chatsInlist = this.lista();
+        ListAdapter adapter = new ListAdapter(this,chatsInlist);
+        listViewchats.setAdapter(adapter);
+    }
+
+
+
+    public void rd(View view){
+        Toast.makeText(getApplicationContext(),"funcional",Toast.LENGTH_LONG).show();
+    }
 
 }
