@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,21 @@ public class ListAdapter extends ArrayAdapter<chat> {
         TextView msj = (TextView)item.findViewById(R.id.tv_msj);
         msj.setText(info.get(position).getMsj());
 
-        //int tipo = info.get(position).getUsr();
+        int tipo = info.get(position).getUsr();
+
+        switch (tipo){
+            case 0:
+            item.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            break;
+            case 1:
+                item.setTextAlignment(convertView.TEXT_ALIGNMENT_TEXT_START);
+            break;
+            default:
+                Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
+        }
+
+
+
         //info.get(position).getUsr();
         //this.alinear(tipo,info.get(position).getMsj());
 
