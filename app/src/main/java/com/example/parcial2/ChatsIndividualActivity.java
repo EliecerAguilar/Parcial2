@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.parcial2.chat;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,9 @@ public class ChatsIndividualActivity extends AppCompatActivity {
     private ListView listViewchats;
     private List<chat> chatsInlist = new ArrayList<>();
     private EditText chatEnviar;
+    private ImageButton imgEnviar;
+    private ImageButton imgRsc;
+    private ImageButton imgIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,16 @@ public class ChatsIndividualActivity extends AppCompatActivity {
         this.imgRedondeada(R.drawable.bat,R.id.imgB);//imagen redondeada
         chatEnviar = (EditText)findViewById(R.id.et_chat);
         listViewchats = (ListView) findViewById(R.id.ListChat);
+
+        imgEnviar = (ImageButton) findViewById(R.id.enviar);
+        imgEnviar.setImageResource(R.drawable.env);
+
+        imgIcon = (ImageButton) findViewById(R.id.imgIcon);
+        imgIcon.setImageResource(R.drawable.face_ico);
+
+        imgRsc = (ImageButton)findViewById(R.id.rsc);
+        imgRsc.setImageResource(R.drawable.clip);
+
     }
 
     private void imgRedondeada(int imgGet, int imgSet){
@@ -70,7 +85,7 @@ public class ChatsIndividualActivity extends AppCompatActivity {
 
     }
 
-    private void enviar(View view){
+    public void enviar(View view){
         int usr =1;
         String str = chatEnviar.getText().toString();
         chatsInlist.add(new chat(str,usr));
