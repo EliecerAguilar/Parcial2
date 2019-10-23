@@ -33,10 +33,10 @@ public class ListAdapter extends ArrayAdapter<chat> {
 
         switch (tipo){
             case 0:
-            item.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            item.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
             break;
             case 1:
-                item.setTextAlignment(convertView.TEXT_ALIGNMENT_TEXT_START);
+                item.setTextAlignment(convertView.TEXT_ALIGNMENT_TEXT_END);
             break;
             default:
                 Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();

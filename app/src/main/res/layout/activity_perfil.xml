@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ADDCF0DC"
+    tools:context=".PerfilActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!-- foto de perfil-->
+        <ImageView
+            android:id="@+id/perfilfoto"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/perfilfoto" />
+
+    <!-- titulo superior -->
+        <TextView
+            android:background="#CD45B332"
+            android:textStyle="italic"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titulo_perfil"
+            android:text="PERFIL"
+            />
+    <!-- titulo de nombre-->
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/perfilfoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre"
+            android:text="NOMBRE:"
+            />
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre2"
+            android:text="Guason Perez"
+            />
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@id/nombre2"
+            android:layout_marginTop="5dp"/>
+
+
+    <!-- titulo de direccion -->
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/direccion"
+            android:text="DIRECCION:" />
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/direccion2"
+            android:text="Narnia"
+            />
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@id/direccion2"
+            android:layout_marginTop="5dp"/>
+
+
+    <!-- titulo de estado -->
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/estado"
+            android:text="ESTADO:" />
+        <Spinner
+            android:id="@+id/estado2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_below="@id/estado2"
+            android:layout_marginTop="5dp"/>
+
+
+
+    <!-- titulo de telefono -->
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telefono"
+            android:text="TELEFONO" />
+        <TextView
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telefono2"
+            android:text="+507 60667572"
+            />
+
+</RelativeLayout>
+
+    <EditText
+        android:id="@+id/prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Variable" />
+</LinearLayout>
