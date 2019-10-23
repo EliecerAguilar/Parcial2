@@ -1,12 +1,16 @@
 package com.example.parcial2;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +52,7 @@ public class ChatsIndividualActivity extends AppCompatActivity {
 
     }
 
+
     private void load(){
 
         tvName = (TextView)findViewById(R.id.tvName);
@@ -70,7 +75,15 @@ public class ChatsIndividualActivity extends AppCompatActivity {
         imgRsc = (ImageButton)findViewById(R.id.rsc);
         imgRsc.setImageResource(R.drawable.clip);
 
+        SharedPreferences preferences = getSharedPreferences("estadochat", Context.MODE_PRIVATE);
+        int color = preferences.getInt("color",0);
+        listViewchats.setBackgroundColor(color);
+
+
+
     }
+
+
 
     private void imgRedondeada(int imgGet, int imgSet){
 
@@ -93,7 +106,7 @@ public class ChatsIndividualActivity extends AppCompatActivity {
     public void enviar(View view){
         int usr =1;
         String str = chatEnviar.getText().toString();
-        chatsInlist.add(new chat(str,usr));
+        chatsInlist.add(new chat(str,usr,R.color.colorAccent));
         ListAdapter adapter = new ListAdapter(this,chatsInlist);
         listViewchats.setAdapter(adapter);
     }
@@ -101,10 +114,10 @@ public class ChatsIndividualActivity extends AppCompatActivity {
     private List<chat> lista(){
         List<chat> ch = new ArrayList<>();
 
-        ch.add(new chat("Soy batman nadie me pude ganar, a todos le spondre F",1));
-        ch.add(new chat("superman es mas buena onda",0));
-        ch.add(new chat("ya valiste",1));
-        ch.add(new chat("MEH!",0));
+        ch.add(new chat("Soy batman nadie me pude ganar, a todos le spondre F",1,R.color.colorAccent));
+        ch.add(new chat("superman es mas buena onda",0,R.color.colorAccent));
+        ch.add(new chat("ya valiste",1,R.color.colorAccent));
+        ch.add(new chat("MEH!",0,R.color.colorAccent));
 
         return ch;
     }

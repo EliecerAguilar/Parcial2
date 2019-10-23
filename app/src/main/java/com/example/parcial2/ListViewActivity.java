@@ -95,8 +95,9 @@ public class ListViewActivity extends AppCompatActivity {
         final Intent intent = new Intent(this,ChatsIndividualActivity.class);
         lstOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                String opcionSeleccionada =((Titulos) a.getItemAtPosition(position)).getUserName();
-                Toast.makeText(ListViewActivity.this, "Opción seleccionada: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
+                //String opcionSeleccionada =((Titulos) a.getItemAtPosition(position)).getUserName();
+                //Toast.makeText(ListViewActivity.this, "Opción seleccionada: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
+
                 opciones.get(position).setImgCheck(R.drawable.doublecheck);//enviar confirmacion imagen al list
                 adapter.notifyDataSetChanged();//mostrar ganchos en azul de leidos
                 // parametros actividad actual, Activity a donde se dirige

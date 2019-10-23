@@ -62,7 +62,7 @@
         <View
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_below="@id/nombre2"
@@ -96,7 +96,7 @@
         <View
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_below="@id/direccion2"
@@ -121,17 +121,16 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/estado"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
         <View
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_below="@id/estado2"
             android:layout_marginTop="5dp"/>
-
-
 
     <!-- titulo de telefono -->
         <TextView
@@ -158,13 +157,6 @@
             android:text="+507 60667572"
             />
 
-</RelativeLayout>
+    </RelativeLayout>
 
-    <EditText
-        android:id="@+id/prueba"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Variable" />
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.parcial2;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,20 @@ import java.util.List;
 public class ListAdapter extends ArrayAdapter<chat> {
 
     private List<chat> info = new ArrayList<>();
+    private int colorText;
 
     public ListAdapter(Context context, List<chat> datos){
         super(context,R.layout.activity_chat,datos);
+        colorText = R.color.colorPrimary;
         info = datos;
+    }
+
+    public void setColorText(int color_text){
+        this.colorText = color_text;
+    }
+
+    public int getColorText(){
+        return this.colorText;
     }
 
     public View getView(int position, View convertView, ViewGroup parent){
@@ -29,23 +41,26 @@ public class ListAdapter extends ArrayAdapter<chat> {
         TextView msj = (TextView)item.findViewById(R.id.tv_msj);
         msj.setText(info.get(position).getMsj());
 
+
         int tipo = info.get(position).getUsr();
 
         switch (tipo){
             case 0:
-            item.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+                msj.setGravity(Gravity.RIGHT);
+                msj.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
+                //item.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
             break;
             case 1:
-                item.setTextAlignment(convertView.TEXT_ALIGNMENT_TEXT_END);
+                //msj.setTextAlignment(convertView.TEXT_ALIGNMENT_TEXT_END);
+                msj.setGravity(Gravity.LEFT);
+                msj.setTextAlignment(View.TEXT_ALIGNMENT_GRAVITY);
             break;
             default:
                 Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
         }
 
 
-
-        //info.get(position).getUsr();
-        //this.alinear(tipo,info.get(position).getMsj());
+        msj.setTextColor(info.get(position).getColor());
 
         return(item);
 
@@ -79,32 +94,5 @@ public class ListAdapter extends ArrayAdapter<chat> {
 
     } */
     //incluir en la activity de perfil
-/*
 
-    private int obtenerColor(String color){
-        switch (color){
-            case "verde":
-                return super.getColor(R.color.green);
-            break;
-            case "rojo":
-                return super.getColor(R.color.red);
-            break;
-            case "azul":
-                return super.getColor(R.color.blue);
-            break;
-            case "amarillo":
-                return super.getColor(R.color.yelow);
-            break;
-            case "negro":
-                return super.getColor(R.color.black);
-            break;
-            case "blanco":
-                return super.getColor(R.color.white);
-            default:
-                Toast.makeText(getApplicationContext(),"color no reconocido",Toast.LENGTH_LONG).show();
-
-        }
-        return super.getColor(R.color.colorPrimary);
-    }
-            */
 }
