@@ -98,6 +98,7 @@ public class ListViewActivity extends AppCompatActivity {
                 String opcionSeleccionada =((Titulos) a.getItemAtPosition(position)).getUserName();
                 Toast.makeText(ListViewActivity.this, "Opción seleccionada: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
                 opciones.get(position).setImgCheck(R.drawable.doublecheck);//enviar confirmacion imagen al list
+                adapter.notifyDataSetChanged();//mostrar ganchos en azul de leidos
                 // parametros actividad actual, Activity a donde se dirige
                 intent.putExtra("usr",(((Titulos) a.getItemAtPosition(position)).getUserName()));//enviar nombre del usuario
                 startActivity(intent);
