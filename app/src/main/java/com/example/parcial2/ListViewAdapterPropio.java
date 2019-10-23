@@ -28,19 +28,18 @@ public class ListViewAdapterPropio extends ArrayAdapter<Titulos>
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.activity_list_view_adapter_propio, null);
-        ImageView image1 = (ImageView)item.findViewById(R.id.imageview);
-        image1.setImageResource(opciones.get(position).getImgUser());
-        TextView lblTitulo = (TextView)item.findViewById(R.id.lblTitulo);
-        lblTitulo.setText(opciones.get(position).getTitulo());
 
-        TextView lblSubtitulo = (TextView)item.findViewById(R.id.lblSubTitulo);
-        lblSubtitulo.setText(opciones.get(position).getSubtitulo());
+        ImageView imgPerfil = (ImageView)item.findViewById(R.id.imgPerfil);
+        imgPerfil.setImageResource(opciones.get(position).getImgUser());
 
-        TextView lblNota = (TextView)item.findViewById(R.id.lblNota);
-        lblNota.setText(opciones.get(position).getNota());
+        TextView tvNameUser = (TextView)item.findViewById(R.id.tvUser);
+        tvNameUser.setText(opciones.get(position).getUserName());
 
+        TextView tvMsjUser = (TextView)item.findViewById(R.id.tvMsjUsr);
+        tvMsjUser.setText(opciones.get(position).getUserMsj());
 
-
+        ImageView imgChekerMsj = (ImageView)item.findViewById(R.id.imgCheck);
+        imgChekerMsj.setImageResource(opciones.get(position).getImgCheck());
 
         return(item);
     }

@@ -2,39 +2,38 @@ package com.example.parcial2;
 
 public class Titulos {
 
-    private String titulo;
-    private String subtitulo;
-    private String nota;
+    private String UserName;
+    private String UserMsj;
     private int imgUser;
+    private int imgCheck;
 
-    public Titulos(String tit, String sub, String not,int img){
+    public Titulos(String UsrName, String UsrMsj,int imgUsr,int imgChecker){
 
-        titulo = tit;
-        subtitulo = sub;
-        nota = not;
-        imgUser=img;
+        UserName = UsrName;
+        UserMsj = UsrMsj;
+        imgUser=imgUsr;
+        imgCheck = imgChecker;
     }
 
 
-
-
-
-    public String getTitulo(){
-        return titulo;
+    public String getUserName() {
+        return UserName;
     }
 
-    public String getSubtitulo(){
-        return subtitulo;
+    public String getUserMsj() {
+        return UserMsj;
     }
 
-    public String getNota() {
-        return nota;
-    }
     public int getImgUser() {
         return imgUser;
     }
-    public void setImgUser (int imgUser) {
-        this.imgUser = imgUser;
+
+    public int getImgCheck(){
+        return imgCheck;
+    }
+
+    public void setImgCheck(int imgChecker){
+        this.imgCheck = imgChecker;
     }
 
 }

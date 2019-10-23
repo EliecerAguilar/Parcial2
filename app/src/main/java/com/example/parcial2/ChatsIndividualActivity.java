@@ -51,9 +51,14 @@ public class ChatsIndividualActivity extends AppCompatActivity {
     private void load(){
 
         tvName = (TextView)findViewById(R.id.tvName);
+        tvName.setText(getIntent().getStringExtra("usr").toString());//pasar nombre del usuario desde otra activity
+
+
         tvStatus = (TextView)findViewById(R.id.tv_status);
         this.imgRedondeada(R.drawable.bat,R.id.imgB);//imagen redondeada
+
         chatEnviar = (EditText)findViewById(R.id.et_chat);
+
         listViewchats = (ListView) findViewById(R.id.ListChat);
 
         imgEnviar = (ImageButton) findViewById(R.id.enviar);
